@@ -1,0 +1,26 @@
+{
+  "name": "gulu",
+  "version": "1.0.0",
+  "description": "这是一个基于 vue 的 UI 框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliteFan0814/gulu.git"
+  },
+  "keywords": [
+    "vue",
+    "UI"
+  ],
+  "author": "elitefan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EliteFan0814/gulu/issues"
+  },
+  "homepage": "https://github.com/EliteFan0814/gulu#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
