@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        :root{
-            --button-height:32px;
+
+        :root {
+            --button-height: 32px;
             --font-size: 14px;
             --button-background: white;
             --button-active-background: #eee;
@@ -22,45 +23,37 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
-        body{
+
+        body {
             font-size: var(--font-size);
         }
-        .g-button{
-            font-size: var(--font-size);
-            height: var(--button-height);
-            padding: 0 1em;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--button-background);
-        }
-        .g-button:hover{
-            border-color: var(--border-color);
-        }
-        .g-button:active{
-            background-color: var(--button-active-background);
-        }
-        .g-button:focus{
-            outline:none;
-        }
-        #app{
+
+        #app {
             margin: 20px;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <div id="app">
-        <g-button></g-button>
-        {{message}}
-    </div>
-    <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="button.js"></script>
-    <script>
-        new Vue({
-            el:'#app',
-            data:{
-                message:'gulu'
-            }
-        })
-    </script>
+<div id="app">
+    <g-button icon="setting" icon-position="right">
+        按钮
+    </g-button>
+    <g-button icon="setting" icon-position="up">
+        按钮
+    </g-button>
+    <g-button icon="setting" icon-position="right">
+        按钮
+    </g-button>
+</div>
+<script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1316653_wclgwhzyt.js"></script>
 </body>
 </html>
