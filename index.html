@@ -35,7 +35,7 @@
 </head>
 <body>
 <div id="app">
-    <g-button icon="setting" icon-position="right">
+    <g-button icon="setting" icon-position="right" :loading="loading1" @click="loading1 = !loading1">
         按钮
     </g-button>
     <g-button icon="setting" icon-position="up">
@@ -44,9 +44,11 @@
     <g-button icon="setting" icon-position="right">
         按钮
     </g-button>
-    <g-icon name="setting"></g-icon>
+    <g-button icon="loading" icon-position="left">
+        按钮
+    </g-button>
 </div>
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1316653_wclgwhzyt.js"></script>
+<script src="//at.alicdn.com/t/font_1316653_6bl9tquzj5w.js"></script>
 </body>
 </html>
