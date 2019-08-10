@@ -7,8 +7,12 @@
 </template>
 
 <script>
+    import Icon from './icon'
     export default {
         // props:['icon','iconPosition']
+        components:{
+            'g-icon': Icon
+        },
         props:{
             icon:{},
             loading:{
@@ -62,6 +66,7 @@
         }
         > .icon{
             margin-right: .1em;
+            order: 1;
         }
         /*> .content{*/
         /*    order: 2;*/
