@@ -68,9 +68,9 @@
             margin-right: .1em;
             order: 1;
         }
-        /*> .content{*/
-        /*    order: 2;*/
-        /*}*/
+        > .content{
+            order: 2;
+        }
         &.icon-right{
             > .icon{
                 order: 2; margin-right: 0em;
