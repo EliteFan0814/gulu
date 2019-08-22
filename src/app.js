@@ -5,17 +5,35 @@ import ButtonGroup from './button-group'
 import Input from './input'
 import chai from 'chai'
 import spies from 'chai-spies'
+import Row from './row'
+import Col from './col'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
 Vue.component('g-input',Input)
+Vue.component('g-row',Row)
+Vue.component('g-col',Col)
 chai.use(spies)
 
 new Vue({
     el: '#app',
     data: {
-        loading1: false
+        loading1: false,
+        message: 'fpc'
+    },
+    created(){
+      setTimeout(()=>{
+          let event = new Event('change')
+          let inputElement = this.$el.querySelectorAll('input')[0]
+          inputElement.dispatchEvent(event)
+          console.log('hai')
+      },3000)
+    },
+    methods:{
+        outChange(e){
+            console.log(e)
+        }
     }
 })
 
