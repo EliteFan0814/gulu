@@ -12,6 +12,8 @@ import Header from './header'
 import Sider from './sider'
 import Footer from './footer'
 import Content from './content'
+import Toast from './toast'
+import plugin from './plugin'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -24,6 +26,8 @@ Vue.component('g-header',Header)
 Vue.component('g-sider',Sider)
 Vue.component('g-footer',Footer)
 Vue.component('g-content',Content)
+Vue.component('g-toast',Toast)
+Vue.use(plugin)
 
 chai.use(spies)
 
@@ -34,6 +38,7 @@ new Vue({
         message: 'fpc'
     },
     created(){
+        this.$toast()
       setTimeout(()=>{
           let event = new Event('change')
           let inputElement = this.$el.querySelectorAll('input')[0]
@@ -44,6 +49,9 @@ new Vue({
     methods:{
         outChange(e){
             console.log(e)
+        },
+        showToast(){
+            this.$toast('我是 message')
         }
     }
 })
