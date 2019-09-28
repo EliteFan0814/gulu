@@ -18,15 +18,15 @@ import plugin from './plugin'
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
-Vue.component('g-input',Input)
-Vue.component('g-row',Row)
-Vue.component('g-col',Col)
-Vue.component('g-layout',Layout)
-Vue.component('g-header',Header)
-Vue.component('g-sider',Sider)
-Vue.component('g-footer',Footer)
-Vue.component('g-content',Content)
-Vue.component('g-toast',Toast)
+Vue.component('g-input', Input)
+Vue.component('g-row', Row)
+Vue.component('g-col', Col)
+Vue.component('g-layout', Layout)
+Vue.component('g-header', Header)
+Vue.component('g-sider', Sider)
+Vue.component('g-footer', Footer)
+Vue.component('g-content', Content)
+Vue.component('g-toast', Toast)
 Vue.use(plugin)
 
 chai.use(spies)
@@ -37,21 +37,29 @@ new Vue({
         loading1: false,
         message: 'fpc'
     },
-    created(){
-        this.$toast()
-      setTimeout(()=>{
-          let event = new Event('change')
-          let inputElement = this.$el.querySelectorAll('input')[0]
-          inputElement.dispatchEvent(event)
-          console.log('hai')
-      },3000)
+    created() {
+        setTimeout(() => {
+            let event = new Event('change')
+            let inputElement = this.$el.querySelectorAll('input')[0]
+            inputElement.dispatchEvent(event)
+            console.log('hai')
+        }, 3000)
     },
-    methods:{
-        outChange(e){
+    methods: {
+        outChange(e) {
             console.log(e)
         },
-        showToast(){
-            this.$toast('我是 message')
+        showToast() {
+            this.$toast('我是 message<p>这是一个段落</p>', {
+                closeButton: {
+                    text: '知道了',
+                    callback(toast) {
+                        toast.log()
+                        console.log('用户说他知道了')
+                    }
+                },
+                enableHtml: false
+            })
         }
     }
 })
